@@ -12,10 +12,10 @@ public class Cliente {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
-    private String nombre;
-    private String apellidos;
+    private String name;
+    private String lastname;
     private String dni;
-    private String telefono;
-    private String correo;
+    private String phone;
+    private String email;
 
 }

@@ -15,22 +15,22 @@ public class ClienteController {
     private ClienteService clienteService;
 
     @GetMapping
-    public ResponseEntity<List<Cliente>> listar() {
+    public ResponseEntity<List<Cliente>> list() {
         return ResponseEntity.ok(clienteService.listar());
     }
 
     @PostMapping
-    public ResponseEntity<Cliente> guardar(@RequestBody Cliente cliente) {
+    public ResponseEntity<Cliente> save(@RequestBody Cliente cliente) {
         return ResponseEntity.ok(clienteService.guardar(cliente));
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<Cliente> buscarPorId(@PathVariable(required = true) Integer id) {
+    public ResponseEntity<Cliente> listById(@PathVariable(required = true) Integer id) {
         return ResponseEntity.ok(clienteService.buscarPorId(id));
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<Cliente> editar(@PathVariable(required = true) Integer id,
+    public ResponseEntity<Cliente> update(@PathVariable(required = true) Integer id,
                                           @RequestBody Cliente cliente) {
         cliente.setId(id);
         return ResponseEntity.ok(clienteService.editar(cliente));
@@ -38,7 +38,7 @@ public class ClienteController {
     }
 
     @DeleteMapping("/{id}")
-    public String eliminar(@PathVariable(required = true) Integer id) {
+    public String delete(@PathVariable(required = true) Integer id) {
         clienteService.eliminar(id);
         return "Eliminacion correcta";
     }
