@@ -8,7 +8,7 @@ import java.util.List;
 
 @Entity
 @Data
-public class Order {
+public class Pedido {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
@@ -16,6 +16,6 @@ public class Order {
     private Integer ClientId;
     @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
     @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-    @JoinColumn(name = "order_id")
+    @JoinColumn(name = "pedido_id")
     private List<OrderDetail> orderDetails;
 }

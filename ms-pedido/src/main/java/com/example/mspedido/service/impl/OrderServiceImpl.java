@@ -1,6 +1,6 @@
 package com.example.mspedido.service.impl;
 
-import com.example.mspedido.entity.Order;
+import com.example.mspedido.entity.Pedido;
 import com.example.mspedido.repository.OrderRepository;
 import com.example.mspedido.service.OrderService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,17 +16,17 @@ public class OrderServiceImpl implements OrderService {
     private OrderRepository orderRepository;
 
     @Override
-    public List<Order> list() {
+    public List<Pedido> list() {
         return orderRepository.findAll();
     }
 
     @Override
-    public Order save(Order order) {
-        return orderRepository.save(order);
+    public Pedido save(Pedido pedido) {
+        return orderRepository.save(pedido);
     }
 
     @Override
-    public Optional<Order> findById(Integer id) {
+    public Optional<Pedido> findById(Integer id) {
         return orderRepository.findById(id);
     }
 
@@ -36,7 +36,7 @@ public class OrderServiceImpl implements OrderService {
     }
 
     @Override
-    public Order update(Order order) {
-        return orderRepository.save(order);
+    public Pedido update(Pedido pedido) {
+        return orderRepository.save(pedido);
     }
 }
